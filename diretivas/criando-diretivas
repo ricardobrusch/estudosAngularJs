@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="Diretivas">
+    <head>
+        <title>Criando Diretivas</title>
+        <meta charset="UTF-8">
+    </head>
+    <body ng-controller='DiretivasController'>
+        
+        <!-- ng-bind = atribui o valor na tag somente após o carregamento da página -->
+        <span ng-bind="dev"></span> <br />
+        <!-- funciona com dois pontos, underline, etc... -->
+        <span ng:bind="dev"></span> <br />
+        <!-- funciona com outros prefixos como X, DATA, etc... -->
+        <span data-ng-bind="dev"></span> <br />
+
+        <hr />
+    
+        <!-- chamando uma diretiva simples -->
+        <p diretiva-exemplo></p>  <br />
+
+        <!-- chamando uma diretiva com parâmetros -->
+        <p diretiva-com-param texto='idade'></p> 
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src='criando-diretivas.js'></script>
+    </body>
+</html>

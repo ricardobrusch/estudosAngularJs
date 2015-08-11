@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MinhaLista">
+    <head>
+        <title>Aula 01</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <div ng-controller="TarefasController">
+          
+            <input type="text" ng-model="nomeQualquer">
+
+            <p>{{nomeQualquer | inverteString}}</p>
+
+            <br />
+            <hr />
+            <br />
+
+             <input type="text" ng-model="outroNomeQualquer">
+
+            <p>{{outroNomeQualquer | chamadaComParametros:'sufixoooo':true}}</p>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="criando-filtros.js"></script>
+    </body>
+</html>

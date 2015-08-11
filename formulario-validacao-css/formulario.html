@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="Formulario">
+    <head>
+        <title>Formulários</title>
+        <meta charset="UTF-8">
+        <style>
+            /*
+                Outras classes para manipulação
+                ng-touched (após tocar no campo)
+                ng-untouched (estado inicial, sem interação)
+                ng-valid-email (validação exclusiva do email)
+                e por aí vai
+            */
+            form input.ng-invalid { border:2px solid #F00; }
+            form input.ng-valid { border:2px solid #0F0; }
+        </style>
+    </head>
+    <body ng-controller="FormController">
+
+        <!-- para enviar SEM VALIDAR, adicionar novalidade sobre o FORM --> 
+        <form ng-submit="salvar(formulario)">
+            Nome <input type="text" ng-model='formulario.nome' required /> 
+            <br />
+
+            Email <input type="email" ng-model='formulario.email' required /> 
+            <br />
+
+            Sexo:  <input type="radio" ng-model='formulario.genero' value="M" />    Masculino  / 
+                <input type="radio" ng-model='formulario.genero' value="F" /> Feminino <br />
+
+            <input type="button" value="Reset" ng-click="reset()" />
+            <input type="submit" value="Enviar" />
+        </form>
+
+    
+        <hr />
+        
+        <pre>
+        {{formulario}}
+        </pre>
+        
+        <hr />
+        
+        <pre>
+        {{salvo}}        
+        </pre>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="formulario.js"></script>
+    </body>
+</html>

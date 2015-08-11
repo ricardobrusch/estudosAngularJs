@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="">
+    <head>
+        <title>Aula 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    </head>
+    <body>
+    	<p ng-show="apresentar">
+    		Olá {{nome}},
+    	</p>
+    	<p ng-hide="esconder">Texto feio, esconder se possível</p>
+    	<input type="text" ng-model="nome">
+    	<input type="checkbox" ng-model="apresentar"> Desejo apresentar dados em tempo real
+		<input type="checkbox" ng-model="esconder"> Desejo esconder o texto feio
+    </body>
+</html>

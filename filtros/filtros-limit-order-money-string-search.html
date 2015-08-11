@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MinhaLista">
+    <head>
+        <title>Aula 01</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <div ng-controller="TarefasController">
+           Buscar: <input type="text" ng-model='buscar'>
+           <ul>
+            <!-- PIPE | aplica filtro -->
+               <li ng-repeat="(chave, tarefa) in tarefas | filter:buscar | orderBy: 'prioridade' | limitTo:2">
+                {{tarefa.nome}} - {{tarefa.prioridade}} - 
+                <a href='' ng-click="delete(chave)">Apagar este item</a> 
+               </li>
+           </ul>
+    
+            <br />
+
+            <input type="text" placeholder="Tarefa" ng-model="nome">
+            <br />
+
+            <input type="text" placeholder="Prioridade" ng-model="prioridade">
+
+            <button ng-click="adicionar()">Incluir</button>
+
+            <hr />
+
+            {{nomePersonagem}} <br />
+            {{idadePersonagem}} <br />
+        
+            <hr />
+
+            {{nomePersonagem | uppercase}} <br />
+            {{idadePersonagem | currency:'R$ ':3}} <br />
+        
+            <hr />
+
+            {{nomePersonagem | lowercase}} <br />
+            {{idadePersonagem | number}} <br />
+        
+            <hr />            
+
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="filtros.js"></script>
+    </body>
+</html>
